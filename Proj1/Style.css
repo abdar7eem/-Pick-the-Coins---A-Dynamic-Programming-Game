@@ -1,0 +1,81 @@
+.home-vbox {
+    -fx-background-image: url("img/Home.jpeg");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+}
+
+.title {
+    -fx-font-family: arial;
+    -fx-font-size: 70px;
+}
+
+.blur-button {
+    -fx-background-color: rgba(80, 80, 80, 0.584);
+    -fx-text-fill: #d3b52d;
+    -fx-background-radius: 20;
+    -fx-padding: 10 20 10 20;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-border-color: #0000;
+    -fx-border-radius: 20;
+}
+
+.blur-button:hover {
+    -fx-background-color: #ffff;
+}
+
+.manual-vbox {
+    -fx-background-image: url("img/Manual.jpeg");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+}
+
+.treansparent {
+    -fx-background-color: transparent;
+}
+
+.game-btn {
+    -fx-background-color: rgba(80, 80, 80, 0.584);
+    -fx-text-fill: #d3b52d;
+    -fx-font-size: 20px;
+}
+
+.game-btn:hover {
+    -fx-background-color: #ffff;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.random-vbox {
+    -fx-background-image: url("img/Random.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+}
+
+.file-vbox {
+    -fx-background-image: url("img/File.jpg");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+}
+
+
+.text-area .content {
+    -fx-background-color: rgba(80, 80, 80, 0.584);
+    -fx-border-color: rgba(80, 80, 80, 0.584);
+}
+
+.Text {
+    -fx-effect: dropshadow(gaussian, black, 12, 0.7, 0, 0);
+    -fx-fill: white;
+}
+

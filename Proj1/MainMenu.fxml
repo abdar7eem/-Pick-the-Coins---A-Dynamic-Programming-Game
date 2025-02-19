@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="808.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <AnchorPane fx:id="MainMenuVbox" prefHeight="200.0" prefWidth="200.0" styleClass="home-vbox" stylesheets="@Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Pick the Coins" textAlignment="CENTER" wrappingWidth="487.091796875">
+                     <font>
+                        <Font name="Arial Bold Italic" size="64.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="playBtn" mnemonicParsing="false" onAction="#playAction" prefHeight="72.0" prefWidth="186.0" styleClass="blur-button" text="Play">
+                     <font>
+                        <Font name="Aldhabi" size="40.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="70.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="exitBtn" layoutX="321.0" layoutY="325.0" mnemonicParsing="false" onAction="#exitAction" prefHeight="72.0" prefWidth="186.0" styleClass="blur-button" text="Exit">
+                     <font>
+                        <Font name="Aldhabi" size="40.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="40.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children></AnchorPane>
+      <AnchorPane fx:id="selectPlayerVbox" prefHeight="200.0" prefWidth="200.0" styleClass="home-vbox" stylesheets="@Style.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" layoutX="331.0" layoutY="121.0" prefHeight="560.0" prefWidth="808.0" spacing="70.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Select Game Mode">
+                     <font>
+                        <Font name="System Bold" size="52.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="computerBtn" alignment="CENTER" mnemonicParsing="false" onAction="#choseComputerMode" prefHeight="47.0" prefWidth="203.0" styleClass="blur-button" text="Computer">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="twoPlayerBtn" alignment="CENTER" layoutX="313.0" layoutY="267.0" mnemonicParsing="false" onAction="#chosetwoPlayerMode" prefHeight="47.0" prefWidth="203.0" styleClass="blur-button" text="2 Players">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="backSelectPlayer" mnemonicParsing="false" onAction="#backSelectPlayerAction" prefHeight="67.0" prefWidth="202.0" styleClass="blur-button" text="Go back">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children></AnchorPane>
+      <AnchorPane fx:id="playingModeVbox" prefHeight="200.0" prefWidth="200.0" styleClass="home-vbox" stylesheets="@Style.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" layoutX="314.0" layoutY="70.0" prefHeight="560.0" prefWidth="808.0" spacing="50.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Select Data Insertion Method" textAlignment="CENTER" wrappingWidth="593.189453125">
+                     <font>
+                        <Font name="System Bold" size="41.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="manualModeBtn" mnemonicParsing="false" onAction="#manualModeBtnAction" prefHeight="55.0" prefWidth="163.0" styleClass="blur-button" text="Manual">
+                     <font>
+                        <Font name="Arial" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="randomModeBtn" layoutX="333.0" layoutY="263.0" mnemonicParsing="false" onAction="#randomModeBtnAction" prefHeight="55.0" prefWidth="163.0" styleClass="blur-button" text="Random">
+                     <font>
+                        <Font name="Arial" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="fileModeBtn" layoutX="333.0" layoutY="290.0" mnemonicParsing="false" onAction="#fileModeBtnAction" prefHeight="55.0" prefWidth="163.0" styleClass="blur-button" text="File">
+                     <font>
+                        <Font name="Arial" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="backMode" layoutX="333.0" layoutY="318.0" mnemonicParsing="false" onAction="#backModeAction" prefHeight="67.0" prefWidth="176.0" styleClass="blur-button" text="Go back">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children></AnchorPane>
+      <AnchorPane fx:id="twoPlayerManual" prefHeight="200.0" prefWidth="200.0" styleClass="manual-vbox" stylesheets="@Style.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <BorderPane prefHeight="560.0" prefWidth="808.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <left>
+                  <VBox alignment="CENTER" prefHeight="560.0" prefWidth="261.0" spacing="40.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Spinner fx:id="twoPlayeManualSpinner" />
+                        <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0">
+                           <content>
+                              <TilePane fx:id="twoPlayerManualTilePane" alignment="TOP_CENTER" hgap="15.0" prefHeight="194.0" prefWidth="258.0" vgap="15.0" />
+                           </content>
+                        </ScrollPane>
+                        <Button fx:id="twoPlayerManualSubmit" mnemonicParsing="false" onAction="#twoPlayerManualSubmitAction" prefHeight="44.0" prefWidth="112.0" styleClass="game-btn" text="Submit" />
+                        <Button fx:id="twoPlayerManualBack" mnemonicParsing="false" onAction="#twoPlayerManualBackAction" styleClass="game-btn" text="Go back" />
+                     </children>
+                     <BorderPane.margin>
+                        <Insets left="10.0" />
+                     </BorderPane.margin>
+                  </VBox>
+               </left>
+               <center>
+                  <VBox alignment="CENTER" prefHeight="503.0" prefWidth="517.0" spacing="20.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="163.0" prefWidth="537.0" spacing="40.0">
+                           <children>
+                              <Text fx:id="twoPlayerManualTurn" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Insert Coins to start" textAlignment="CENTER" wrappingWidth="401.6796875">
+                                 <font>
+                                    <Font size="43.0" />
+                                 </font>
+                              </Text>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                                 <children>
+                                    <Button fx:id="twoPlayerManualChoseA" mnemonicParsing="false" onAction="#twoPlayerManualChoseAAction" prefHeight="43.0" prefWidth="101.0" styleClass="game-btn" text="-" />
+                                    <Button fx:id="twoPlayerManualChoseB" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#twoPlayerManualChoseBAction" prefHeight="43.0" prefWidth="101.0" styleClass="game-btn" text="-" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="55.0" prefWidth="537.0" spacing="10.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Player 1 earned coins: ">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="twoPlayerManualP1Coins" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="-">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="55.0" prefWidth="537.0" spacing="10.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Player 2 earned coins: ">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="twoPlayerManualP2Coins" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="-">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="65.0" prefHeight="55.0" prefWidth="537.0" spacing="10.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Winner: ">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="twoPlayerManualCoins" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="-">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </BorderPane.margin>
+                  </VBox>
+               </center>
+               <top>
+                  <HBox fx:id="twoPlayerManualSelectedCoinsHbox" alignment="TOP_CENTER" prefHeight="120.0" prefWidth="808.0" spacing="15.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Inserted Coins :">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <padding>
+                        <Insets top="40.0" />
+                     </padding>
+                  </HBox>
+               </top>
+            </BorderPane>
+         </children></AnchorPane>
+      <AnchorPane fx:id="twoPlayerRandom" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" styleClass="random-vbox" stylesheets="@Style.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="560.0" prefWidth="808.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox fx:id="twoPlayerRandomSelectedCoinsHbox" alignment="CENTER" prefHeight="68.0" prefWidth="537.0" spacing="35.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Random Coins :">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <VBox alignment="CENTER" prefHeight="163.0" prefWidth="537.0" spacing="40.0">
+                     <children>
+                        <Text fx:id="twoPlayerRandomTurn" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Player X Turn" textAlignment="CENTER" wrappingWidth="313.6796875">
+                           <font>
+                              <Font size="43.0" />
+                           </font>
+                        </Text>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                           <children>
+                              <Button fx:id="twoPlayerRandomChoseA" mnemonicParsing="false" onAction="#twoPlayerRandomChoseAAction" prefHeight="43.0" prefWidth="101.0" styleClass="game-btn" text="A" />
+                              <Button fx:id="twoPlayerRandomChoseB" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#twoPlayerRandomChoseBAction" prefHeight="43.0" prefWidth="101.0" styleClass="game-btn" text="B" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="55.0" prefWidth="537.0" spacing="10.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Player 1 earned coins: ">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="twoPlayerRandomP1Coins" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="-">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="55.0" prefWidth="537.0" spacing="10.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Player 2 earned coins: ">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="twoPlayerRandomP2Coins" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="-">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="65.0" prefHeight="55.0" prefWidth="537.0" spacing="10.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Winner: ">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="twoPlayerRandomWinner" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="-">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <Button fx:id="twoPlayerRandomBack" mnemonicParsing="false" onAction="#twoPlayerRandomBackAction" styleClass="game-btn" text="Go back" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+         </children></AnchorPane>
+      <AnchorPane fx:id="twoPlayerFile" layoutX="20.0" layoutY="20.0" prefHeight="200.0" prefWidth="200.0" styleClass="file-vbox" stylesheets="@Style.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="560.0" prefWidth="808.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox fx:id="twoPlayerFileSelectedCoinsHbox" alignment="CENTER" prefHeight="68.0" prefWidth="537.0" spacing="35.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="File Coins :">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <VBox alignment="CENTER" prefHeight="163.0" prefWidth="537.0" spacing="40.0">
+                     <children>
+                        <Text fx:id="twoPlayerFileTurn" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Player X Turn" textAlignment="CENTER" wrappingWidth="313.6796875">
+                           <font>
+                              <Font size="43.0" />
+                           </font>
+                        </Text>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                           <children>
+                              <Button fx:id="twoPlayerFileChoseA" mnemonicParsing="false" onAction="#twoPlayerFileChoseAAction" prefHeight="43.0" prefWidth="101.0" styleClass="game-btn" stylesheets="@Style.css" text="A" />
+                              <Button fx:id="twoPlayerFileChoseB" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#twoPlayerFileChoseBAction" prefHeight="43.0" prefWidth="101.0" styleClass="game-btn" stylesheets="@Style.css" text="B" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="55.0" prefWidth="537.0" spacing="10.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Player 1 earned coins: ">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="twoPlayerFileP1Coins" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="-">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="55.0" prefWidth="537.0" spacing="10.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Player 2 earned coins: ">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="twoPlayerFileP2Coins" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="-">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="65.0" prefHeight="55.0" prefWidth="537.0" spacing="10.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Winner: ">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="twoPlayerFileWinner" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="-">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <Button fx:id="twoPlayerFileBack" mnemonicParsing="false" onAction="#twoPlayerFileBackAction" styleClass="game-btn" stylesheets="@Style.css" text="Go back" />
+               </children>
+            </VBox>
+         </children></AnchorPane>
+      <AnchorPane fx:id="computerManual" layoutX="30.0" layoutY="30.0" prefHeight="200.0" prefWidth="200.0" styleClass="manual-vbox" stylesheets="@Style.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <BorderPane prefHeight="560.0" prefWidth="808.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <left>
+                  <VBox alignment="CENTER" prefHeight="560.0" prefWidth="226.0" spacing="20.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Spinner fx:id="computerManualSpinner" />
+                        <ScrollPane hbarPolicy="NEVER" prefHeight="252.0" prefWidth="216.0">
+                           <content>
+                              <TilePane fx:id="comuterManualTilePane" alignment="TOP_CENTER" hgap="15.0" prefHeight="245.0" prefWidth="212.0" vgap="15.0" />
+                           </content>
+                        </ScrollPane>
+                        <Button fx:id="comuterManualSubmit" mnemonicParsing="false" onAction="#comuterManualSubmitAction" prefHeight="45.0" prefWidth="122.0" styleClass="game-btn" text="Submit" />
+                        <Button fx:id="computerManualBack" mnemonicParsing="false" onAction="#computerManualBackAction" prefHeight="31.0" prefWidth="122.0" styleClass="game-btn" text="Go back">
+                           <VBox.margin>
+                              <Insets bottom="15.0" />
+                           </VBox.margin></Button>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </VBox>
+               </left>
+               <center>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="40.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="238.0" prefWidth="582.0">
+                           <children>
+                              <TextArea fx:id="comuterManualTextArea" editable="false" prefHeight="219.0" prefWidth="520.0" styleClass="Text">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font></TextArea>
+                           </children>
+                        </HBox>
+                        <VBox prefHeight="145.0" prefWidth="490.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="61.0" prefWidth="582.0" spacing="15.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Player 1 coins:">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="comuterManualP1Coins" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="-">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="61.0" prefWidth="582.0" spacing="15.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Player 2 coins:">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="comuterManualP2Coins" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="-">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="71.0" prefHeight="61.0" prefWidth="582.0" spacing="15.0">
+                                 <children>
+                                    <Text fx:id="comuterManualWinner" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="-">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                     </padding>
+                  </VBox>
+               </center>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <top>
+                  <HBox fx:id="comuterManualSelectedCoinsHbox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Inserted Coins: " wrappingWidth="226.357421875">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+               </top>
+            </BorderPane>
+         </children></AnchorPane>
+      <AnchorPane fx:id="computerRandom" prefHeight="200.0" prefWidth="200.0" styleClass="random-vbox" stylesheets="@Style.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefHeight="560.0" prefWidth="808.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox fx:id="computerRandomSelectedCoinsHbox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Random Coins:">
+                           <font>
+                              <Font size="35.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <BorderPane prefHeight="462.0" prefWidth="808.0">
+                     <right>
+                        <TextArea fx:id="computerRandomTextArea" editable="false" prefHeight="452.0" prefWidth="331.0" styleClass="Text" BorderPane.alignment="CENTER">
+                           <BorderPane.margin>
+                              <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                           </BorderPane.margin>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextArea>
+                     </right>
+                     <center>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Player 1 earned coins:">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="computerRandomP1Coins" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="-">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Player 2 earned coins:">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="computerRandomP2Coins" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="-">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                                 <children>
+                                    <Text fx:id="computerRandomWinner" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="-">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <Button fx:id="computerRandomBack" mnemonicParsing="false" onAction="#computerRandomBackAction" prefHeight="44.0" prefWidth="118.0" styleClass="game-btn" text="Go back" />
+                           </children>
+                           <BorderPane.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </BorderPane.margin>
+                        </VBox>
+                     </center>
+                  </BorderPane>
+               </children>
+               <padding>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+               </padding>
+            </VBox>
+         </children></AnchorPane>
+      <AnchorPane fx:id="computerFile" prefHeight="200.0" prefWidth="200.0" styleClass="file-vbox" stylesheets="@Style.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefHeight="560.0" prefWidth="808.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox fx:id="computerFileSelectedCoinsHbox" alignment="CENTER" prefHeight="100.0" prefWidth="768.0" spacing="10.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="File Coins:">
+                           <font>
+                              <Font size="35.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <BorderPane prefHeight="462.0" prefWidth="808.0">
+                     <right>
+                        <TextArea fx:id="computerFileTextArea" editable="false" prefHeight="452.0" prefWidth="331.0" styleClass="Text" BorderPane.alignment="CENTER">
+                           <BorderPane.margin>
+                              <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                           </BorderPane.margin>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextArea>
+                     </right>
+                     <center>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Player 1 earned coins:">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="computerFileP1Coins" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="-">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Player 2 earned coins:">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="computerFileP2Coins" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="-">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                                 <children>
+                                    <Text fx:id="computerFileWinner" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="-">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <Button fx:id="computerFileBack" mnemonicParsing="false" onAction="#computerFileBackAction" prefHeight="44.0" prefWidth="109.0" styleClass="game-btn" text="Go back" />
+                           </children>
+                           <BorderPane.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </BorderPane.margin>
+                        </VBox>
+                     </center>
+                  </BorderPane>
+               </children>
+               <padding>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+               </padding>
+            </VBox>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>
